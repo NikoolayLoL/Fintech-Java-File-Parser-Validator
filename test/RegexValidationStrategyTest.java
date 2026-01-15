@@ -1,5 +1,3 @@
-package test;
-
 import annotations.Regex;
 import validation.RegexValidationStrategy;
 

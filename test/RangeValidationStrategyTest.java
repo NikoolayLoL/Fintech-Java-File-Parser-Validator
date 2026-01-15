@@ -1,5 +1,3 @@
-package test;
-
 import annotations.Range;
 import validation.RangeValidationStrategy;
 

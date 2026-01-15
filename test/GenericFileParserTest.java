@@ -1,5 +1,3 @@
-package test;
-
 import parser.GenericFileParser;
 import annotations.*;
 import exceptions.ParsingException;

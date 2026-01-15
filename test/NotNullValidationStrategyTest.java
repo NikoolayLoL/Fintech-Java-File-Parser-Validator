@@ -1,5 +1,3 @@
-package test;
-
 import annotations.NotNull;
 import validation.NotNullValidationStrategy;
 
