@@ -2,6 +2,36 @@ package models;
 
 import annotations.*;
 
+/**
+ * Model class representing a customer record from a comma-delimited file.
+ * <p>
+ * This class demonstrates the use of parsing and validation annotations for customer
+ * data, including pattern-based email validation and range-based age validation.
+ * </p>
+ * 
+ * <p><b>File Format:</b></p>
+ * <pre>
+ * name,email,age
+ * John Doe,john.doe@example.com,35
+ * Jane Smith,jane.smith@company.org,28
+ * </pre>
+ * 
+ * <p><b>Validation Rules:</b></p>
+ * <ul>
+ *   <li>Name: Required (cannot be null)</li>
+ *   <li>Email: Required, must match standard email pattern</li>
+ *   <li>Age: Required, must be between 18 and 120</li>
+ * </ul>
+ * 
+ * @see annotations.FileSource
+ * @see annotations.Column
+ * @see annotations.NotNull
+ * @see annotations.Regex
+ * @see annotations.Range
+ * @author FinTech Corp
+ * @version 1.0.0
+ * @since 1.0.0
+ */
 @FileSource(delimiter = ",")
 public class Customer {
     
