@@ -155,19 +155,14 @@ public class GenericFileParser<T> {
         }
         
         try {
-            if (targetType == String.class) {
-                return value;
-            } else if (targetType == int.class || targetType == Integer.class) {
-                return Integer.parseInt(value);
-            } else if (targetType == double.class || targetType == Double.class) {
-                return Double.parseDouble(value);
-            } else if (targetType == boolean.class || targetType == Boolean.class) {
-                return Boolean.parseBoolean(value);
-            } else if (targetType == LocalDate.class) {
-                return LocalDate.parse(value);
-            } else {
-                throw new ParsingException("Unsupported type: " + targetType.getName());
-            }
+            return switch (targetType.getName()) {
+                case "java.lang.String" -> value;
+                case "int", "java.lang.Integer" -> Integer.parseInt(value);
+                case "double", "java.lang.Double" -> Double.parseDouble(value);
+                case "boolean", "java.lang.Boolean" -> Boolean.parseBoolean(value);
+                case "java.time.LocalDate" -> LocalDate.parse(value);
+                default -> throw new ParsingException("Unsupported type: " + targetType.getName());
+            };
         } catch (NumberFormatException | DateTimeParseException e) {
             throw new ParsingException("Failed to convert value '" + value + "' to type " + targetType.getName(), e);
         }
