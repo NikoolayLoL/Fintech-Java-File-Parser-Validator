@@ -1,0 +1,4 @@
+John Doe,john.doe@example.com,35
+Jane Smith,jane.smith@company.org,28
+Bob Johnson,bob@email.com,42
+Alice Williams,alice.w@domain.net,31
